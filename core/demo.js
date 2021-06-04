@@ -1,3 +1,8 @@
+
+/**
+ * @description 作用域解读
+ */
+
 var x = 1;
 function foo(
   // 3. 作者说了这里是一个单独的作用域 所以这两个是同个东西
@@ -14,3 +19,15 @@ function foo(
 
 foo(); // 3
 x; // 1
+
+/**
+ * @description if的作用域及外部可以访问嘛
+ */
+
+if (true) {
+	// 块级作用域 let外部拿不到 var可以
+	let demo = 'demo'
+	console.log(demo);
+}
+
+console.log(demo);
