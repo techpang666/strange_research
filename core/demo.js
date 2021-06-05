@@ -31,3 +31,18 @@ if (true) {
 }
 
 console.log(demo);
+
+/**
+ * @description 类型比较
+ */
+
+let demo = '1'
+let age = 1
+// 类型不同时 尝试转换类型进行比较
+console.log(demo == age); /* true */
+// 全等比较 包括类型
+console.log(demo === age); /* false */
+// 类型不同时 尝试转换类型进行比较
+console.log(demo != age); /* false */
+// 全等比较 包括类型
+console.log(demo !== age); /* true */
