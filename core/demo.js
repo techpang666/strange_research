@@ -46,3 +46,30 @@ console.log(demo === age); /* false */
 console.log(demo != age); /* false */
 // 全等比较 包括类型
 console.log(demo !== age); /* true */
+
+/**
+ * @description 变量提升及全局变量问题
+ */
+
+var demo = 'window' /* 全局 */
+function fn() {
+  console.log(demo); /* window */
+  if (false) {
+    // var是全局变量 不受限块级作用域
+    // 因为变量提升 先是undefined 再是赋值var undefined的时候替换了原来的window
+    var demo = 'var'
+  }
+}
+fn()
+
+/**
+ * @description var定义的迭代变量
+ */
+
+var arr = [];
+for (var i = 0; i < 10; i++) {
+	arr[i] = function () {
+		console.log(i);
+	};
+}
+console.log(i);
